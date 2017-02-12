@@ -31,4 +31,14 @@ from teaches, instructor
 where instructor.id=teaches.id and semester='Spring' and year=2010
 
 6.
-select 
+select title, count(s.id) as no_of_students
+from course c, takes t, student1 s
+where s.id=t.id and c.course_id=t.course_id
+group by title
+
+7.
+select dept_name, count(course_id) as no_of_courses
+from course
+group by dept_name
+
+8.
